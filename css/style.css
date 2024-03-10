@@ -25,10 +25,11 @@ h3{
 p{
     line-height: 1.5;
 }
+
 img{
     border: 3px solid rgb(47, 62, 18);
     padding: 5px;
-    margin: 20px;
+    margin: 5px auto;
     border-top-right-radius: 30px;
     width: 90%;
 }
@@ -56,10 +57,9 @@ nav a.current-page {
     font-weight: bold;
 }
 
-.gallery {
+.gallery{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 5px dashed #412821;
     align-items: center;
     justify-items: center;
     margin: 10px auto;
@@ -67,19 +67,11 @@ nav a.current-page {
     padding: 5px;
 }
 
-.gallery video {
-    width: 95%;
-}
-
-.gallery-landscape {
-    display: grid;
-    grid-template-columns: 1fr;
-    border: 5px dashed #412821;
-    align-items: center;
-    justify-items: center;
-    margin: 10px auto;
-    width: 90%;
-    padding: 5px;
+.column {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 100%;
+    max-width: 100%;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -89,3 +81,44 @@ nav a.current-page {
       transition-duration: 0.001ms !important;
     }
   }
+
+@media screen and (min-width: 768px) {
+    nav ul, .recipe_description {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav li, .recipe_description {
+        list-style: none;
+    }
+    header {
+        background-color: rgb(137, 179, 137);
+        padding: 10px;
+    }
+
+    .item {
+        margin: 20px 0px 20px 0px;
+    }
+
+    .gallery-parks {
+        display: flex;
+        flex-wrap: wrap;
+        border: 3px double #412821;
+        align-items: flex-start;
+        margin: 10px auto;
+        padding: 5px;
+    }
+
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 5px 0px 5px 0px;
+        justify-items: center;
+        align-items: center;
+    }
+}
